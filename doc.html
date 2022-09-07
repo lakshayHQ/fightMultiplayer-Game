@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fighting Game </title>
+    <link rel="stylesheet" href="CoolGame.css">
+</head>
+<body>
+    <br>
+    <div class="menu">
+
+        <!--Player 1 --> 
+          <div class="p1Info">
+            <div id="p1Name">Lakshay</div>  <br>
+            <img src="player1.gif" alt="" id="p1">
+
+            <div class="playerControls">
+                <div class="AttackDiv">
+                    <h3>Q: </h3>
+                    <button onclick="player1.strike(player1,player2,player1.attackDmg)" id="attack"> Attack</button>
+                </div>
+                <div class="HealDiv">
+        <h3>A:</h3>
+                    <button onclick="player1.heal(player1)"  id="heal">Heal</button>
+                </div>
+            </div>
+
+            <div id="p1Health">100</div> 
+        </div>
+
+
+
+            <button id="play" onclick="game.play()">Simulate</button>
+    
+            <!-- Player 2 -->
+             <div class="p2Info">
+                <div id="p2Name">Chirag</div> <br>
+                <img src="player1.gif" alt="" id="p2" >
+    
+                <div class="playerControls">
+                    <div class="AttackDiv">
+                        <h3>P:</h3>
+                        <button onclick="player2.strike(player2,player1,player2.attackDmg)" id="attack"> Attack</button>
+                    </div>
+                    <div class="HealDiv">
+                        <h3>L:</h3>
+                        <button onclick="player2.heal(player2)"  id="heal">Heal</button>
+                    </div>
+                </div>
+    
+                <div id="p2Health">100</div> 
+            </div>
+    
+    </div>
+    <br> 
+
+    <!-- Result Section -->
+    <div class="resultContainer">
+    <div id="result"></div>
+    <button id="reset" 
+    onclick="game.reset(player1,player2)"
+
+    >Reset</button>
+
+    </div>
+    <!-- Audio Section -->
+    <audio  id="p1attack" style="display: none"
+controls ><source src="punch.mp3" type="audio/mpeg"></audio>
+
+<audio  id="p1heal" controls style="display : none;">
+     <source src="heal.mp3" type="audio/mpeg"></audio>
+
+     <audio  id="p2attack" style="display: none"
+     controls >
+     <source src="punch.mp3" type="audio/mpeg"></audio>
+     
+     <audio  id="p2heal" controls style="display : none;">
+          <source src="heal.mp3" type="audio/mpeg"></audio>
+        
+<script src="index.js"></script>
+</body>
+
+<audio id="simulate" style="display: none"
+controls ><source src="Simulate.mp3"  type="audio/mpeg"></audio>
+<audio id="victory" style="display: none"
+controls ><source src="Winning.mp3"  type="audio/mpeg"></audio>
+</html>
